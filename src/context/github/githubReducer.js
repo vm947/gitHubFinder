@@ -4,7 +4,7 @@ import {
   CLEAR_USERS,
   GET_USER,
   GET_REPOS,
-  ONCHANGE_TEXT
+  ONCHANGE_TEXT,
 } from "../types";
 
 export default (state, action) => {
@@ -15,11 +15,11 @@ export default (state, action) => {
         users: action.payload,
         loading: false,
       };
-      case ONCHANGE_TEXT:
-        return{
-          ...state,
-          text: action.payload,
-        }
+    case ONCHANGE_TEXT:
+      return {
+        ...state,
+        text: action.payload,
+      };
     case GET_USER:
       return {
         ...state,
@@ -31,6 +31,7 @@ export default (state, action) => {
         ...state,
         users: [],
         loading: false,
+        text: "",
       };
     case GET_REPOS:
       return {
